@@ -5,7 +5,7 @@ Demo weather app with multiplatform network core.
 
 ## OTUS-iOS homework for Module 28
 
-Создание мультиплатформенного сетевого слоя с помощью KMM и openapi-generator
+Создание мультиплатформенного сетевого слоя с помощью KMM и openapi-generator.
 
 Coding multiplatform network layer using [KMM](https://www.jetbrains.com/lp/mobilecrossplatform/) and code-generation.
 
