@@ -13,7 +13,7 @@ Demo weather app with multiplatform network core
 
 ## Problem solution
   
-1. **PROBLEM**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) currently (as a publication day) not generates multiplatfrom kotlin code correctly: lots of calls are deprecated
+1. **PROBLEM**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) currently (as a publication day) not generates multiplatfrom kotlin code correctly: lots of calls are deprecated, you may see it [here](https://github.com/c-villain/WeatherMP/tree/master/NetworkLayer)
     >openapi-generator generate -g kotlin -i [file].yaml --library multiplatform -o NetworkLayer 
 2. Using [moko-network **sample**](https://github.com/icerockdev/moko-network) am generates **part** of necessary code:
     * >CityApi.kt
@@ -29,7 +29,7 @@ Demo weather app with multiplatform network core
    
 ## Решение:
 
-1. **Проблема**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) на текущий момент (на время публикации репозитория) корректно не генерирует код для мультиплатформенной библиотеки на Kotlin: много вызовов запрещены.
+1. **Проблема**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) на текущий момент (на время публикации репозитория) корректно не генерирует код для мультиплатформенной библиотеки на Kotlin: много вызовов запрещены, сгенерированный код можете посмотреть [здесь](https://github.com/c-villain/WeatherMP/tree/master/NetworkLayer)
     >openapi-generator generate -g kotlin -i [file].yaml --library multiplatform -o NetworkLayer 
 2. Используя [moko-network **sample**](https://github.com/icerockdev/moko-network) сгенерировал **часть** необходимого кода, в моем случае это:
     * >CityApi.kt
