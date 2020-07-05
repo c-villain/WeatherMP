@@ -7,15 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AABE71724B0812800E077FE /* CityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABE71624B0812800E077FE /* CityRow.swift */; };
+		5AABE71A24B0816300E077FE /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABE71924B0816300E077FE /* CityViewModel.swift */; };
+		5AABE71D24B083FA00E077FE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AABE71C24B083FA00E077FE /* City.swift */; };
 		5AD223E924AE70120086E4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD223E824AE70120086E4E1 /* AppDelegate.swift */; };
 		5AD223EB24AE70120086E4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD223EA24AE70120086E4E1 /* SceneDelegate.swift */; };
 		5AD223ED24AE70120086E4E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD223EC24AE70120086E4E1 /* ContentView.swift */; };
 		5AD223EF24AE70130086E4E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AD223EE24AE70130086E4E1 /* Assets.xcassets */; };
 		5AD223F224AE70130086E4E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AD223F124AE70130086E4E1 /* Preview Assets.xcassets */; };
 		5AD223F524AE70130086E4E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD223F324AE70130086E4E1 /* LaunchScreen.storyboard */; };
+		5AD2240924AE70270086E4E1 /* app.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD2240124AE70270086E4E1 /* app.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AD9835D24B1DBA0008AE4D6 /* SearhBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9835C24B1DBA0008AE4D6 /* SearhBar.swift */; };
+		5ADBDD0624B08775007CD7D6 /* app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD2240124AE70270086E4E1 /* app.framework */; };
+		5AE806BF24B0FBB400D0431F /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE806BE24B0FBB400D0431F /* ServiceLocator.swift */; };
+		5AE806C124B0FBDD00D0431F /* CityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE806C024B0FBDD00D0431F /* CityService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5AD2240624AE70270086E4E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD223DD24AE70120086E4E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AD2240024AE70270086E4E1;
+			remoteInfo = app;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5AD2240D24AE70270086E4E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AD2240924AE70270086E4E1 /* app.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5A437BE824AE7E3500852526 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
+		5AABE71624B0812800E077FE /* CityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRow.swift; sourceTree = "<group>"; };
+		5AABE71924B0816300E077FE /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		5AABE71C24B083FA00E077FE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		5AD223E524AE70120086E4E1 /* WeatherMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD223E824AE70120086E4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD223EA24AE70120086E4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,10 +60,22 @@
 		5AD223F124AE70130086E4E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AD223F424AE70130086E4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AD223F624AE70130086E4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AD2240124AE70270086E4E1 /* app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AD9835C24B1DBA0008AE4D6 /* SearhBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhBar.swift; sourceTree = "<group>"; };
+		5AE806BE24B0FBB400D0431F /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		5AE806C024B0FBDD00D0431F /* CityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5AD223E224AE70120086E4E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ADBDD0624B08775007CD7D6 /* app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AD223FE24AE70270086E4E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,11 +85,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A91CF2224B07AE5004E82B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AABE71524B0810500E077FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AABE71624B0812800E077FE /* CityRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5AABE71824B0813B00E077FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5AABE71924B0816300E077FE /* CityViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5AABE71B24B083E800E077FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AABE71C24B083FA00E077FE /* City.swift */,
+				5AE806BE24B0FBB400D0431F /* ServiceLocator.swift */,
+				5AE806C024B0FBDD00D0431F /* CityService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5AD223DC24AE70120086E4E1 = {
 			isa = PBXGroup;
 			children = (
+				5AD9835B24B1DB8D008AE4D6 /* Controls */,
+				5AABE71B24B083E800E077FE /* Model */,
+				5AABE71824B0813B00E077FE /* ViewModels */,
+				5AABE71524B0810500E077FE /* Views */,
+				5A437BE824AE7E3500852526 /* app */,
 				5AD223E724AE70120086E4E1 /* WeatherMP */,
 				5AD223E624AE70120086E4E1 /* Products */,
+				5A91CF2224B07AE5004E82B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5AD223E524AE70120086E4E1 /* WeatherMP.app */,
+				5AD2240124AE70270086E4E1 /* app.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,7 +163,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5AD9835B24B1DB8D008AE4D6 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				5AD9835C24B1DBA0008AE4D6 /* SearhBar.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5AD223FC24AE70270086E4E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5AD223E424AE70120086E4E1 /* WeatherMP */ = {
@@ -85,15 +191,36 @@
 				5AD223E124AE70120086E4E1 /* Sources */,
 				5AD223E224AE70120086E4E1 /* Frameworks */,
 				5AD223E324AE70120086E4E1 /* Resources */,
+				5AD2240D24AE70270086E4E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5AD2240724AE70270086E4E1 /* PBXTargetDependency */,
 			);
 			name = WeatherMP;
 			productName = WeatherMP;
 			productReference = 5AD223E524AE70120086E4E1 /* WeatherMP.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5AD2240024AE70270086E4E1 /* app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AD2240A24AE70270086E4E1 /* Build configuration list for PBXNativeTarget "app" */;
+			buildPhases = (
+				5AD223FC24AE70270086E4E1 /* Headers */,
+				5AD223FD24AE70270086E4E1 /* Sources */,
+				5AD223FE24AE70270086E4E1 /* Frameworks */,
+				5AD223FF24AE70270086E4E1 /* Resources */,
+				5AD2241024AE70590086E4E1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = app;
+			productName = app;
+			productReference = 5AD2240124AE70270086E4E1 /* app.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -106,6 +233,9 @@
 				ORGANIZATIONNAME = "Alexander Kraev";
 				TargetAttributes = {
 					5AD223E424AE70120086E4E1 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					5AD2240024AE70270086E4E1 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -124,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				5AD223E424AE70120086E4E1 /* WeatherMP */,
+				5AD2240024AE70270086E4E1 /* app */,
 			);
 		};
 /* End PBXProject section */
@@ -139,7 +270,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5AD223FF24AE70270086E4E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AD2241024AE70590086E4E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/gradlew\" -p \"$SRCROOT/app\" copyFramework \\\n-Pconfiguration.build.dir=\"$CONFIGURATION_BUILD_DIR\"          \\\n-Pkotlin.build.type=\"$KOTLIN_BUILD_TYPE\"                      \\\n-Pkotlin.target=\"$KOTLIN_TARGET\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AD223E124AE70120086E4E1 /* Sources */ = {
@@ -147,12 +305,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD223E924AE70120086E4E1 /* AppDelegate.swift in Sources */,
+				5AD9835D24B1DBA0008AE4D6 /* SearhBar.swift in Sources */,
+				5AABE71A24B0816300E077FE /* CityViewModel.swift in Sources */,
+				5AABE71D24B083FA00E077FE /* City.swift in Sources */,
+				5AABE71724B0812800E077FE /* CityRow.swift in Sources */,
 				5AD223EB24AE70120086E4E1 /* SceneDelegate.swift in Sources */,
 				5AD223ED24AE70120086E4E1 /* ContentView.swift in Sources */,
+				5AE806C124B0FBDD00D0431F /* CityService.swift in Sources */,
+				5AE806BF24B0FBB400D0431F /* ServiceLocator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AD223FD24AE70270086E4E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AD2240724AE70270086E4E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AD2240024AE70270086E4E1 /* app */;
+			targetProxy = 5AD2240624AE70270086E4E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5AD223F324AE70130086E4E1 /* LaunchScreen.storyboard */ = {
@@ -288,6 +467,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherMP/Preview Content\"";
 				DEVELOPMENT_TEAM = TP33793R45;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/app/build/bin/ios/debugFramework",
+				);
 				INFOPLIST_FILE = WeatherMP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +491,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherMP/Preview Content\"";
 				DEVELOPMENT_TEAM = TP33793R45;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/app/build/bin/ios/debugFramework",
+				);
 				INFOPLIST_FILE = WeatherMP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -317,6 +504,68 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5AD2240B24AE70270086E4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TP33793R45;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/app/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				KOTLIN_BUILD_TYPE = DEBUG;
+				KOTLIN_TARGET = "";
+				"KOTLIN_TARGET[sdk=iphoneos*]" = ios;
+				"KOTLIN_TARGET[sdk=iphonesimulator*]" = ios;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lexkraev.app;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5AD2240C24AE70270086E4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TP33793R45;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/app/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				KOTLIN_BUILD_TYPE = RELEASE;
+				KOTLIN_TARGET = "";
+				"KOTLIN_TARGET[sdk=iphoneos*]" = ios;
+				"KOTLIN_TARGET[sdk=iphonesimulator*]" = ios;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lexkraev.app;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -337,6 +586,15 @@
 			buildConfigurations = (
 				5AD223FA24AE70130086E4E1 /* Debug */,
 				5AD223FB24AE70130086E4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AD2240A24AE70270086E4E1 /* Build configuration list for PBXNativeTarget "app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AD2240B24AE70270086E4E1 /* Debug */,
+				5AD2240C24AE70270086E4E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
