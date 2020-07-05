@@ -7,13 +7,15 @@ Demo weather app with multiplatform network core
 
 Создание мультиплатформенного сетевого слоя с помощью KMM и openapi-generator
 
+Coding multiplatform network layer using [KMM](https://www.jetbrains.com/lp/mobilecrossplatform/) and code-generation.
+
 ## Used: 
 * [Public weather api](https://www.metaweather.com/api)
 * [Gradle 6.1.1](https://gradle.org/releases/)
 
 ## Problem solution
   
-1. **PROBLEM**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) currently (as a publication day) not generates multiplatfrom kotlin code correctly: lots of calls are deprecated, you may see it [here](https://github.com/c-villain/WeatherMP/tree/master/NetworkLayer)
+1. **PROBLEM**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) currently (as a publication day) not generates multiplatform kotlin code correctly: lots of calls are deprecated, you may see it [here](https://github.com/c-villain/WeatherMP/tree/master/NetworkLayer)
     >openapi-generator generate -g kotlin -i [file].yaml --library multiplatform -o NetworkLayer 
 2. Using [moko-network **sample**](https://github.com/icerockdev/moko-network) am generates **part** of necessary code:
     * >CityApi.kt
