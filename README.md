@@ -1,5 +1,7 @@
 # WeatherMP
-Demo weather app with multiplatform network core 
+Demo weather app with multiplatform network core
+
+Демо приложение погоды с кроссплатформенным сетевым слоем.
 
 ## OTUS-iOS homework for Module 28
 
@@ -18,8 +20,9 @@ Demo weather app with multiplatform network core
     * >City.kt
     * >Weather.kt
     * >WeatherNewsList.kt
+    
    **PROBLEM**: [icerockdev](https://github.com/icerockdev)'s approach in **moko-network** is to generate code for multiplatform view model. 
-   My case is to write multiplatfrom network case.
+   My case is to write multiplatfrom network service.
 3. Using [this article](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (special thanks to [**Anna Zharkova**](https://github.com/anioutkazharkova)) and [this project](https://github.com/anioutkazharkova/kmp_news_sample) write a **rest part** of code:
     * >Dispatcher.kt
     * >NewsApiService.kt
@@ -33,8 +36,9 @@ Demo weather app with multiplatform network core
     * >City.kt
     * >Weather.kt
     * >WeatherNewsList.kt
+    
    **Проблема**: подход [icerockdev](https://github.com/icerockdev) в **moko-network** - сгенерировать мультиплатформенный код для view model. 
    В моем случае решил сделать сетевой сервис.
-3. Используя [this article](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (отдельное спасибо [**Анне Жарковой**](https://github.com/anioutkazharkova)) and [this project](https://github.com/anioutkazharkova/kmp_news_sample) пишем **оставшуюся** часть кода:
+3. Используя статью ["Создаём своё первое приложение для Kotlin Multiplatform"](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (отдельное спасибо [**Анне Жарковой**](https://github.com/anioutkazharkova)) и [этот проект](https://github.com/anioutkazharkova/kmp_news_sample) пишем **оставшуюся** часть кода:
     * >Dispatcher.kt
     * >NewsApiService.kt
