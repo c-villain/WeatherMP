@@ -1,0 +1,147 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "City",
+    "description" : "Cities",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "email" : "lexkraev@gmail.com"
+    },
+    "version" : "1.0.0"
+  },
+  "externalDocs" : {
+    "description" : "API Root",
+    "url" : "https://www.metaweather.com/"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/c-villain/City/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  }, {
+    "url" : "https://www.metaweather.com/api/location/",
+    "description" : "Metaweather API Get Cities"
+  } ],
+  "tags" : [ {
+    "name" : "name",
+    "description" : "City name"
+  } ],
+  "paths" : {
+    "/search/" : {
+      "get" : {
+        "tags" : [ "city" ],
+        "summary" : "Search city",
+        "operationId" : "searchCity",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "name of city",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cities"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{woeid}" : {
+      "get" : {
+        "tags" : [ "city" ],
+        "summary" : "Get weather by Earth ID",
+        "operationId" : "weatherOnEarthID",
+        "parameters" : [ {
+          "name" : "woeid",
+          "in" : "path",
+          "description" : "Where On Earth ID",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Expected response to a valid request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WeatherNewsList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "WeatherNewsList" : {
+        "type" : "object",
+        "properties" : {
+          "consolidated_weather" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Weather"
+            }
+          }
+        }
+      },
+      "Weather" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "weather_state_name" : {
+            "type" : "string"
+          },
+          "applicable_date" : {
+            "type" : "string"
+          },
+          "the_temp" : {
+            "type" : "number"
+          },
+          "wind_direction_compass" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Cities" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/City"
+        }
+      },
+      "City" : {
+        "type" : "object",
+        "properties" : {
+          "title" : {
+            "type" : "string"
+          },
+          "location_type" : {
+            "type" : "string"
+          },
+          "woeid" : {
+            "type" : "integer"
+          },
+          "latt_long" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
