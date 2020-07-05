@@ -37,6 +37,6 @@ Demo weather app with multiplatform network core
     
    **Проблема**: подход [icerockdev](https://github.com/icerockdev) в **moko-network** - сгенерировать мультиплатформенный код для view model. 
    В моем случае решил сделать сетевой сервис.
-3. Используя [статью "Создаём своё первое приложение для Kotlin Multiplatform"](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (отдельное спасибо [**Анне Жарковой**](https://github.com/anioutkazharkova)) и [этот проект](https://github.com/anioutkazharkova/kmp_news_sample) пишем **оставшуюся** часть кода:
+3. Используя статью ["Создаём своё первое приложение для Kotlin Multiplatform"](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (отдельное спасибо [**Анне Жарковой**](https://github.com/anioutkazharkova)) и [этот проект](https://github.com/anioutkazharkova/kmp_news_sample) пишем **оставшуюся** часть кода:
     * >Dispatcher.kt
     * >NewsApiService.kt
