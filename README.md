@@ -1,5 +1,6 @@
 # WeatherMP
-Demo weather app with multiplatform network core 
+Demo weather app with multiplatform network core
+
 Демо приложение погоды с кроссплатформенным сетевым слоем.
 
 ## OTUS-iOS homework for Module 28
