@@ -12,28 +12,44 @@ import app
 final class CityViewModel : ObservableObject
 {
     @Published private(set) var cities: [City] = [City]()
-    
-    private let cityService: CityService
-
-    init(cityService: CityService) {
-        self.cityService = cityService
-    }
 
     func clearItems(){
         self.cities.removeAll()
     }
     
-    func loadCities(cityName: String )  {
-        cityService.loadCities(cityName){result in
-            DispatchQueue.main.async {
-                switch result{
-                case .success(let cities):
-                    self.cities.append(contentsOf: cities)
-                    
-                case .failure(let error):
-                    print("Failed loading cities: " + error.localizedDescription)
-                }
-            }
-        }
+    private var weatherServiceApi : WeatherApiService = WeatherApiService()
+    
+    func loadCities(cityName: String)  {
+        
+        weatherServiceApi.loadData(query: cityName)
+//            DispatchQueue.main.async {
+                let results = self.weatherServiceApi.data
+                self.cities.append(contentsOf: results)
+//            }
+
+//        DispatchQueue.main.async {
+//                let results = self.weatherServiceApi.loadData(query: cityName)
+//                self.cities.append(contentsOf: results)
+//            }
+//            
+        
+        
+//            self.weatherServiceApi.loadData(query: cityName)
+//        DispatchQueue.main.async {
+//            let results = self.weatherServiceApi.data
+//            self.cities.append(contentsOf: results)
+//        }
+//
+//        weatherServiceApi.loadCities(query: cityName){result in
+//            DispatchQueue.main.async {
+//                switch result{
+//                case .success(let cities):
+//                    self.cities.append(contentsOf: cities)
+//
+//                case .failure(let error):
+//                    print("Failed loading cities: " + error.localizedDescription)
+//                }
+//            }
+//        }
     }
 }

@@ -10,18 +10,18 @@ import Foundation
 import app
 
 class CityService {
-    private var newServiceApi : NewsApiService = NewsApiService()
+    private var weatherServiceApi : WeatherApiService = WeatherApiService()
     
-    func loadCities(_ cityName: String, onLoading: @escaping (_ results: Result<[City], Error>) -> ())
-    {
-        newServiceApi.loadData(query: cityName)
-        let results = newServiceApi.data
-        
-        guard results != nil else {
-            onLoading(.failure(NSError()))
-            return
-        }
-        
-        onLoading(.success(results))
-    }
+//    func loadCities(_ cityName: String, onLoading: @escaping (_ results: Result<[City], Error>) -> ())
+//    {
+//        weatherServiceApi.loadData(query: cityName)
+//        let results = weatherServiceApi.data
+//        
+//        guard results != nil else {
+//            onLoading(.failure(NSError()))
+//            return
+//        }
+//        
+//        onLoading(.success(results))
+//    }
 }

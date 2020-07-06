@@ -14,6 +14,9 @@ package dev.icerock.moko.network.generated.apis
 import dev.icerock.moko.network.generated.models.City
 import dev.icerock.moko.network.generated.models.WeatherNewsList
 
+import dev.icerock.moko.network.generated.dispatcher.*
+import dev.icerock.moko.network.generated.response.*
+
 import io.ktor.client.HttpClient
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.request
@@ -24,10 +27,15 @@ import io.ktor.http.Parameters
 import io.ktor.http.takeFrom
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.builtins.list
-//import dev.icerock.moko.network.LargeTextContent
+
+import kotlinx.coroutines.*
+
+
 import io.ktor.client.call.ReceivePipelineException
 
+
 class CityApi(basePath: kotlin.String = "https://www.metaweather.com/api/location/", httpClient: HttpClient, json: Json) {
+    
     private val _basePath = basePath
     private val _httpClient = httpClient
     private val _json = json
@@ -38,6 +46,8 @@ class CityApi(basePath: kotlin.String = "https://www.metaweather.com/api/locatio
     * @param query name of city 
     * @return kotlin.collections.List<City>
     */
+    
+    
     //@Suppress("UNCHECKED_CAST")
     suspend fun searchCity(query: kotlin.String) : kotlin.collections.List<City> {
         val builder = HttpRequestBuilder()
@@ -66,7 +76,50 @@ class CityApi(basePath: kotlin.String = "https://www.metaweather.com/api/locatio
             throw pipeline.cause
         }
     }
+    
+    
+    /*
+    //@Suppress("UNCHECKED_CAST")
+    suspend fun searchCity(query: kotlin.String,completed: (ContentResponse<List<City>>)->Unit) {
+        ktorScope {
+            val builder = HttpRequestBuilder()
+            var contentResponse = ContentResponse<List<City>>()
 
+            builder.method = HttpMethod.Get
+            builder.url {
+                takeFrom(_basePath)
+                encodedPath = encodedPath.let { startingPath ->
+                    path("search/")
+                    return@let startingPath + encodedPath.substring(1)
+                }
+                with(parameters) {
+                    query?.let { append("query", it.toString()) }
+                }
+            }
+
+            with(builder.headers) {
+                append("Accept", "application/json")
+            }
+
+            try {
+                //not primitive type
+                val result: String = _httpClient.request(builder)
+                val response = _json.parse(City.serializer().list, result)
+                contentResponse.content = response
+            }catch (ex: Exception) {
+                val error = ErrorResponse()
+                error.message = ex.message.toString()
+                contentResponse.errorResponse = error
+                print(ex.message.toString())
+            }
+            
+            //Ответ отдаем в UI-поток
+            withContext(uiDispatcher) {
+                completed(contentResponse)
+            }
+        }
+    }
+*/
     /**
     * Get weather by Earth ID
     * 

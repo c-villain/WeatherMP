@@ -12,8 +12,8 @@ actual val uiDispatcher: CoroutineContext
 actual val defaultDispatcher: CoroutineContext
     get() = MainDispatcher
 
-//actual  val ioDispatcher: CoroutineContext
-//    get() = IosDefaultDispatcher
+actual val iosDispatcher: CoroutineContext
+    get() = IosDefaultDispatcher
 
 actual fun ktorScope(block: suspend () -> Unit) {
     GlobalScope.launch(MainDispatcher) { block() }

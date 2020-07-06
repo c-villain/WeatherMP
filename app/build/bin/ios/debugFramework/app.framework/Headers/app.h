@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class AppCity, AppKtor_client_coreHttpClient, AppKotlinx_serialization_runtimeJson, AppWeather, AppWeatherNewsList, AppKotlinx_coroutines_coreCoroutineDispatcher, AppKtor_client_coreHttpClientConfig, AppKtor_client_coreHttpClientEngineConfig, AppKtor_client_coreHttpReceivePipeline, AppKtor_client_coreHttpRequestPipeline, AppKtor_client_coreHttpResponsePipeline, AppKtor_client_coreHttpSendPipeline, AppKotlinx_serialization_runtimeJsonBuilder, AppKotlinx_serialization_runtimeJsonConfiguration, AppKotlinx_serialization_runtimeJsonElement, AppKotlinAbstractCoroutineContextElement, AppKtor_utilsAttributeKey, AppKtor_client_coreProxyConfig, AppKotlinNothing, AppKtor_utilsPipelinePhase, AppKotlinArray, AppKtor_utilsPipeline, AppKotlinx_serialization_runtimeUpdateMode, AppKotlinx_serialization_runtimeJsonNull, AppKotlinx_serialization_runtimeJsonPrimitive, AppKotlinx_serialization_runtimeSerialKind, AppKtor_httpUrl, AppKotlinEnum, AppKtor_httpURLProtocol;
+@class AppCity, AppKtor_client_coreHttpClient, AppKotlinx_serialization_runtimeJson, AppWeather, AppWeatherNewsList, AppErrorResponse, AppErrorType, AppKotlinEnum, AppKotlinx_coroutines_coreCoroutineDispatcher, AppKtor_client_coreHttpClientConfig, AppKtor_client_coreHttpClientEngineConfig, AppKtor_client_coreHttpReceivePipeline, AppKtor_client_coreHttpRequestPipeline, AppKtor_client_coreHttpResponsePipeline, AppKtor_client_coreHttpSendPipeline, AppKotlinx_serialization_runtimeJsonBuilder, AppKotlinx_serialization_runtimeJsonConfiguration, AppKotlinx_serialization_runtimeJsonElement, AppKotlinAbstractCoroutineContextElement, AppKtor_utilsAttributeKey, AppKtor_client_coreProxyConfig, AppKotlinNothing, AppKtor_utilsPipelinePhase, AppKotlinArray, AppKtor_utilsPipeline, AppKotlinx_serialization_runtimeUpdateMode, AppKotlinx_serialization_runtimeJsonNull, AppKotlinx_serialization_runtimeJsonPrimitive, AppKotlinx_serialization_runtimeSerialKind, AppKtor_httpUrl, AppKtor_httpURLProtocol;
 
-@protocol AppKotlinx_coroutines_coreCoroutineScope, AppKotlinx_serialization_runtimeKSerializer, AppKotlinCoroutineContext, AppKotlinSuspendFunction0, AppKtor_ioCloseable, AppKtor_client_coreHttpClientEngine, AppKtor_client_coreHttpClientEngineCapability, AppKtor_utilsAttributes, AppKotlinx_serialization_runtimeDeserializationStrategy, AppKotlinx_serialization_runtimeSerializationStrategy, AppKotlinx_serialization_runtimeSerialModule, AppKotlinx_serialization_runtimeSerialFormat, AppKotlinx_serialization_runtimeStringFormat, AppKotlinx_serialization_runtimeEncoder, AppKotlinx_serialization_runtimeSerialDescriptor, AppKotlinx_serialization_runtimeDecoder, AppKotlinCoroutineContextElement, AppKotlinCoroutineContextKey, AppKotlinFunction, AppKotlinContinuation, AppKotlinContinuationInterceptor, AppKotlinx_coroutines_coreRunnable, AppKtor_client_coreHttpClientFeature, AppKotlinSuspendFunction2, AppKotlinx_serialization_runtimeSerialModuleCollector, AppKotlinKClass, AppKotlinx_serialization_runtimeCompositeEncoder, AppKotlinAnnotation, AppKotlinx_serialization_runtimeCompositeDecoder, AppKotlinIterator, AppKotlinKDeclarationContainer, AppKotlinKAnnotatedElement, AppKotlinKClassifier, AppKotlinComparable, AppKtor_httpParameters, AppKotlinMapEntry, AppKtor_utilsStringValues;
+@protocol AppKotlinx_coroutines_coreCoroutineScope, AppKotlinx_serialization_runtimeKSerializer, AppKotlinComparable, AppKotlinSuspendFunction0, AppKotlinCoroutineContext, AppKtor_ioCloseable, AppKtor_client_coreHttpClientEngine, AppKtor_client_coreHttpClientEngineCapability, AppKtor_utilsAttributes, AppKotlinx_serialization_runtimeDeserializationStrategy, AppKotlinx_serialization_runtimeSerializationStrategy, AppKotlinx_serialization_runtimeSerialModule, AppKotlinx_serialization_runtimeSerialFormat, AppKotlinx_serialization_runtimeStringFormat, AppKotlinx_serialization_runtimeEncoder, AppKotlinx_serialization_runtimeSerialDescriptor, AppKotlinx_serialization_runtimeDecoder, AppKotlinFunction, AppKotlinCoroutineContextKey, AppKotlinCoroutineContextElement, AppKotlinContinuation, AppKotlinContinuationInterceptor, AppKotlinx_coroutines_coreRunnable, AppKtor_client_coreHttpClientFeature, AppKotlinSuspendFunction2, AppKotlinx_serialization_runtimeSerialModuleCollector, AppKotlinKClass, AppKotlinx_serialization_runtimeCompositeEncoder, AppKotlinAnnotation, AppKotlinx_serialization_runtimeCompositeDecoder, AppKotlinIterator, AppKotlinKDeclarationContainer, AppKotlinKAnnotatedElement, AppKotlinKClassifier, AppKtor_httpParameters, AppKotlinMapEntry, AppKtor_utilsStringValues;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -138,8 +138,8 @@ __attribute__((swift_name("KotlinBoolean")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("NewsApiService")))
-@interface AppNewsApiService : AppBase
+__attribute__((swift_name("WeatherApiService")))
+@interface AppWeatherApiService : AppBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (void)loadDataQuery:(NSString *)query __attribute__((swift_name("loadData(query:)")));
@@ -231,10 +231,55 @@ __attribute__((swift_name("WeatherNewsList.Companion")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("NewsApiServiceKt")))
-@interface AppNewsApiServiceKt : AppBase
-@property (class, readonly) id<AppKotlinCoroutineContext> defaultDispatcher __attribute__((swift_name("defaultDispatcher")));
-@property (class, readonly) id<AppKotlinCoroutineContext> uiDispatcher __attribute__((swift_name("uiDispatcher")));
+__attribute__((swift_name("ContentResponse")))
+@interface AppContentResponse : AppBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property id _Nullable content __attribute__((swift_name("content")));
+@property AppErrorResponse * _Nullable errorResponse __attribute__((swift_name("errorResponse")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ErrorResponse")))
+@interface AppErrorResponse : AppBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property int32_t code __attribute__((swift_name("code")));
+@property NSString *errorType __attribute__((swift_name("errorType")));
+@property NSString *message __attribute__((swift_name("message")));
+@property AppErrorType *type __attribute__((swift_name("type")));
+@end;
+
+__attribute__((swift_name("KotlinComparable")))
+@protocol AppKotlinComparable
+@required
+- (int32_t)compareToOther:(id _Nullable)other __attribute__((swift_name("compareTo(other:)")));
+@end;
+
+__attribute__((swift_name("KotlinEnum")))
+@interface AppKotlinEnum : AppBase <AppKotlinComparable>
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer));
+- (int32_t)compareToOther:(AppKotlinEnum *)other __attribute__((swift_name("compareTo(other:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@property (readonly) int32_t ordinal __attribute__((swift_name("ordinal")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ErrorType")))
+@interface AppErrorType : AppKotlinEnum
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) AppErrorType *network __attribute__((swift_name("network")));
+@property (class, readonly) AppErrorType *auth __attribute__((swift_name("auth")));
+@property (class, readonly) AppErrorType *tech __attribute__((swift_name("tech")));
+@property (class, readonly) AppErrorType *other __attribute__((swift_name("other")));
+@property (class, readonly) AppErrorType *notfound __attribute__((swift_name("notfound")));
+@property (class, readonly) AppErrorType *badanswer __attribute__((swift_name("badanswer")));
+- (int32_t)compareToOther:(AppErrorType *)other __attribute__((swift_name("compareTo(other:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -242,8 +287,9 @@ __attribute__((swift_name("DispatcherKt")))
 @interface AppDispatcherKt : AppBase
 + (void)ktorScopeBlock:(id<AppKotlinSuspendFunction0>)block __attribute__((swift_name("ktorScope(block:)")));
 @property (class, readonly) AppKotlinx_coroutines_coreCoroutineDispatcher *ApplicationDispatcher __attribute__((swift_name("ApplicationDispatcher")));
-@property (class, readonly) id<AppKotlinCoroutineContext> defaultDispatcher_ __attribute__((swift_name("defaultDispatcher_")));
-@property (class, readonly) id<AppKotlinCoroutineContext> uiDispatcher_ __attribute__((swift_name("uiDispatcher_")));
+@property (class, readonly) id<AppKotlinCoroutineContext> defaultDispatcher __attribute__((swift_name("defaultDispatcher")));
+@property (class, readonly) id<AppKotlinCoroutineContext> iosDispatcher __attribute__((swift_name("iosDispatcher")));
+@property (class, readonly) id<AppKotlinCoroutineContext> uiDispatcher __attribute__((swift_name("uiDispatcher")));
 @end;
 
 __attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
@@ -327,15 +373,6 @@ __attribute__((swift_name("Kotlinx_serialization_runtimeKSerializer")))
 @required
 @end;
 
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol AppKotlinCoroutineContext
-@required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<AppKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<AppKotlinCoroutineContextElement> _Nullable)getKey:(id<AppKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
-- (id<AppKotlinCoroutineContext>)minusKeyKey:(id<AppKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<AppKotlinCoroutineContext>)plusContext:(id<AppKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end;
-
 __attribute__((swift_name("KotlinFunction")))
 @protocol AppKotlinFunction
 @required
@@ -344,6 +381,15 @@ __attribute__((swift_name("KotlinFunction")))
 __attribute__((swift_name("KotlinSuspendFunction0")))
 @protocol AppKotlinSuspendFunction0 <AppKotlinFunction>
 @required
+@end;
+
+__attribute__((swift_name("KotlinCoroutineContext")))
+@protocol AppKotlinCoroutineContext
+@required
+- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<AppKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
+- (id<AppKotlinCoroutineContextElement> _Nullable)getKey:(id<AppKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
+- (id<AppKotlinCoroutineContext>)minusKeyKey:(id<AppKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
+- (id<AppKotlinCoroutineContext>)plusContext:(id<AppKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
 @end;
 
 __attribute__((swift_name("KotlinCoroutineContextElement")))
@@ -700,23 +746,6 @@ __attribute__((swift_name("KotlinKClass")))
 - (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
 @property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
 @property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
-@end;
-
-__attribute__((swift_name("KotlinComparable")))
-@protocol AppKotlinComparable
-@required
-- (int32_t)compareToOther:(id _Nullable)other __attribute__((swift_name("compareTo(other:)")));
-@end;
-
-__attribute__((swift_name("KotlinEnum")))
-@interface AppKotlinEnum : AppBase <AppKotlinComparable>
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer));
-- (int32_t)compareToOther:(AppKotlinEnum *)other __attribute__((swift_name("compareTo(other:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) int32_t ordinal __attribute__((swift_name("ordinal")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

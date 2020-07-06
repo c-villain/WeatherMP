@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let cityService = CityService() as CityService
         locator.registerService(service: cityService)
         
-        let cityViewModel = CityViewModel(cityService: locator.getService())
+//        let cityViewModel = CityViewModel(cityService: locator.getService())
+        
+        let cityViewModel = CityViewModel()
         
         let contentView = ContentView().environmentObject(cityViewModel)
 
