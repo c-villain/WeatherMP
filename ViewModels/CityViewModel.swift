@@ -22,10 +22,11 @@ final class CityViewModel : ObservableObject
     func loadCities(cityName: String)  {
         
         weatherServiceApi.loadData(query: cityName)
-//            DispatchQueue.main.async {
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
                 let results = self.weatherServiceApi.data
                 self.cities.append(contentsOf: results)
-//            }
+            }
 
 //        DispatchQueue.main.async {
 //                let results = self.weatherServiceApi.loadData(query: cityName)
