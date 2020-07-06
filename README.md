@@ -27,7 +27,7 @@ Coding multiplatform network layer using [KMM](https://www.jetbrains.com/lp/mobi
    My case is to write multiplatfrom network service.
 3. Using [this article](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (special thanks to [**Anna Zharkova**](https://github.com/anioutkazharkova)) and [this project](https://github.com/anioutkazharkova/kmp_news_sample) write a **rest part** of code:
     * >Dispatcher.kt
-    * >NewsApiService.kt
+    * >WeatherApiService.kt
    
 ## Решение:
 
@@ -43,4 +43,4 @@ Coding multiplatform network layer using [KMM](https://www.jetbrains.com/lp/mobi
    В моем случае решил сделать сетевой сервис.
 3. Используя статью ["Создаём своё первое приложение для Kotlin Multiplatform"](https://tproger.ru/articles/creating-an-app-for-kotlin-multiplatform) (отдельное спасибо [**Анне Жарковой**](https://github.com/anioutkazharkova)) и [этот проект](https://github.com/anioutkazharkova/kmp_news_sample) пишем **оставшуюся** часть кода:
     * >Dispatcher.kt
-    * >NewsApiService.kt
+    * >WeatherApiService.kt
