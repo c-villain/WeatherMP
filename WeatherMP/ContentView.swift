@@ -15,28 +15,28 @@ struct ContentView: View {
     @State var searchTerm : String = "Mos"
     
     var body: some View {
-        VStack{
-            HStack{
-                SearchBar(text: $searchTerm)
-                Button(action:{
-                    self.cityViewModel.clearItems()
-                    self.cityViewModel.loadCities(cityName: self.searchTerm)
-                }, label: {
-                    Text("Search")})
-                Spacer()
-            }
-            NavigationView{
-                List(self.cityViewModel.cities, id: \.id){
-                    city in NavigationLink(
-                    destination: CityRow(city: city)){
+        NavigationView{
+            VStack{
+                HStack{
+                    SearchBar(text: $searchTerm)
+                    Button(action:{
+                        self.cityViewModel.clearItems()
+                        self.cityViewModel.loadCities(cityName: self.searchTerm)
+                    }, label: {
+                        Text("Search")})
+                    Spacer()
+                }
+                
+                List(self.cityViewModel.cities, id: \.id){city in
+                    NavigationLink(destination: CityWeatherListView(city: city)){
                         CityRow(city: city)
                     }
                 }.onAppear(){
                     self.cityViewModel.clearItems()
                     self.cityViewModel.loadCities(cityName: self.searchTerm)
                 }//List
-                .navigationBarTitle("", displayMode: .inline)
-                .navigationBarHidden(true)
+                    .navigationBarTitle("", displayMode: .inline)
+                    .navigationBarHidden(true)
             } //NavigationView
         }
     } //View

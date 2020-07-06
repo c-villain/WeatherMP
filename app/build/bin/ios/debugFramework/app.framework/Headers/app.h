@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class AppCity, AppKtor_client_coreHttpClient, AppKotlinx_serialization_runtimeJson, AppWeather, AppWeatherNewsList, AppErrorResponse, AppErrorType, AppKotlinEnum, AppKotlinx_coroutines_coreCoroutineDispatcher, AppKtor_client_coreHttpClientConfig, AppKtor_client_coreHttpClientEngineConfig, AppKtor_client_coreHttpReceivePipeline, AppKtor_client_coreHttpRequestPipeline, AppKtor_client_coreHttpResponsePipeline, AppKtor_client_coreHttpSendPipeline, AppKotlinx_serialization_runtimeJsonBuilder, AppKotlinx_serialization_runtimeJsonConfiguration, AppKotlinx_serialization_runtimeJsonElement, AppKotlinAbstractCoroutineContextElement, AppKtor_utilsAttributeKey, AppKtor_client_coreProxyConfig, AppKotlinNothing, AppKtor_utilsPipelinePhase, AppKotlinArray, AppKtor_utilsPipeline, AppKotlinx_serialization_runtimeUpdateMode, AppKotlinx_serialization_runtimeJsonNull, AppKotlinx_serialization_runtimeJsonPrimitive, AppKotlinx_serialization_runtimeSerialKind, AppKtor_httpUrl, AppKtor_httpURLProtocol;
+@class AppCity, AppWeatherNewsList, AppKtor_client_coreHttpClient, AppKotlinx_serialization_runtimeJson, AppWeather, AppErrorResponse, AppErrorType, AppKotlinEnum, AppKotlinx_coroutines_coreCoroutineDispatcher, AppKtor_client_coreHttpClientConfig, AppKtor_client_coreHttpClientEngineConfig, AppKtor_client_coreHttpReceivePipeline, AppKtor_client_coreHttpRequestPipeline, AppKtor_client_coreHttpResponsePipeline, AppKtor_client_coreHttpSendPipeline, AppKotlinx_serialization_runtimeJsonBuilder, AppKotlinx_serialization_runtimeJsonConfiguration, AppKotlinx_serialization_runtimeJsonElement, AppKotlinAbstractCoroutineContextElement, AppKtor_utilsAttributeKey, AppKtor_client_coreProxyConfig, AppKotlinNothing, AppKtor_utilsPipelinePhase, AppKotlinArray, AppKtor_utilsPipeline, AppKotlinx_serialization_runtimeUpdateMode, AppKotlinx_serialization_runtimeJsonNull, AppKotlinx_serialization_runtimeJsonPrimitive, AppKotlinx_serialization_runtimeSerialKind, AppKtor_httpUrl, AppKtor_httpURLProtocol;
 
 @protocol AppKotlinx_coroutines_coreCoroutineScope, AppKotlinx_serialization_runtimeKSerializer, AppKotlinComparable, AppKotlinSuspendFunction0, AppKotlinCoroutineContext, AppKtor_ioCloseable, AppKtor_client_coreHttpClientEngine, AppKtor_client_coreHttpClientEngineCapability, AppKtor_utilsAttributes, AppKotlinx_serialization_runtimeDeserializationStrategy, AppKotlinx_serialization_runtimeSerializationStrategy, AppKotlinx_serialization_runtimeSerialModule, AppKotlinx_serialization_runtimeSerialFormat, AppKotlinx_serialization_runtimeStringFormat, AppKotlinx_serialization_runtimeEncoder, AppKotlinx_serialization_runtimeSerialDescriptor, AppKotlinx_serialization_runtimeDecoder, AppKotlinFunction, AppKotlinCoroutineContextKey, AppKotlinCoroutineContextElement, AppKotlinContinuation, AppKotlinContinuationInterceptor, AppKotlinx_coroutines_coreRunnable, AppKtor_client_coreHttpClientFeature, AppKotlinSuspendFunction2, AppKotlinx_serialization_runtimeSerialModuleCollector, AppKotlinKClass, AppKotlinx_serialization_runtimeCompositeEncoder, AppKotlinAnnotation, AppKotlinx_serialization_runtimeCompositeDecoder, AppKotlinIterator, AppKotlinKDeclarationContainer, AppKotlinKAnnotatedElement, AppKotlinKClassifier, AppKtor_httpParameters, AppKotlinMapEntry, AppKtor_utilsStringValues;
 
@@ -142,9 +142,11 @@ __attribute__((swift_name("WeatherApiService")))
 @interface AppWeatherApiService : AppBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (void)loadDataQuery:(NSString *)query __attribute__((swift_name("loadData(query:)")));
-@property NSArray<AppCity *> *data __attribute__((swift_name("data")));
+- (void)loadCitiesQuery:(NSString *)query __attribute__((swift_name("loadCities(query:)")));
+- (void)loadWeatherForCityWoeid:(int32_t)woeid __attribute__((swift_name("loadWeatherForCity(woeid:)")));
+@property NSArray<AppCity *> *cities __attribute__((swift_name("cities")));
 @property id<AppKotlinx_coroutines_coreCoroutineScope> scope __attribute__((swift_name("scope")));
+@property AppWeatherNewsList *weatherList __attribute__((swift_name("weatherList")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -183,18 +185,18 @@ __attribute__((swift_name("City.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Weather")))
 @interface AppWeather : AppBase
-- (instancetype)initWithId:(AppInt * _Nullable)id weatherStateName:(NSString * _Nullable)weatherStateName applicableDate:(NSString * _Nullable)applicableDate theTemp:(AppDouble * _Nullable)theTemp windDirectionCompass:(NSString * _Nullable)windDirectionCompass __attribute__((swift_name("init(id:weatherStateName:applicableDate:theTemp:windDirectionCompass:)"))) __attribute__((objc_designated_initializer));
-- (AppInt * _Nullable)component1 __attribute__((swift_name("component1()")));
+- (instancetype)initWithId:(AppLong * _Nullable)id weatherStateName:(NSString * _Nullable)weatherStateName applicableDate:(NSString * _Nullable)applicableDate theTemp:(AppDouble * _Nullable)theTemp windDirectionCompass:(NSString * _Nullable)windDirectionCompass __attribute__((swift_name("init(id:weatherStateName:applicableDate:theTemp:windDirectionCompass:)"))) __attribute__((objc_designated_initializer));
+- (AppLong * _Nullable)component1 __attribute__((swift_name("component1()")));
 - (NSString * _Nullable)component2 __attribute__((swift_name("component2()")));
 - (NSString * _Nullable)component3 __attribute__((swift_name("component3()")));
 - (AppDouble * _Nullable)component4 __attribute__((swift_name("component4()")));
 - (NSString * _Nullable)component5 __attribute__((swift_name("component5()")));
-- (AppWeather *)doCopyId:(AppInt * _Nullable)id weatherStateName:(NSString * _Nullable)weatherStateName applicableDate:(NSString * _Nullable)applicableDate theTemp:(AppDouble * _Nullable)theTemp windDirectionCompass:(NSString * _Nullable)windDirectionCompass __attribute__((swift_name("doCopy(id:weatherStateName:applicableDate:theTemp:windDirectionCompass:)")));
+- (AppWeather *)doCopyId:(AppLong * _Nullable)id weatherStateName:(NSString * _Nullable)weatherStateName applicableDate:(NSString * _Nullable)applicableDate theTemp:(AppDouble * _Nullable)theTemp windDirectionCompass:(NSString * _Nullable)windDirectionCompass __attribute__((swift_name("doCopy(id:weatherStateName:applicableDate:theTemp:windDirectionCompass:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString * _Nullable applicableDate __attribute__((swift_name("applicableDate")));
-@property (readonly) AppInt * _Nullable id __attribute__((swift_name("id")));
+@property (readonly) AppLong * _Nullable id __attribute__((swift_name("id")));
 @property (readonly) AppDouble * _Nullable theTemp __attribute__((swift_name("theTemp")));
 @property (readonly) NSString * _Nullable weatherStateName __attribute__((swift_name("weatherStateName")));
 @property (readonly) NSString * _Nullable windDirectionCompass __attribute__((swift_name("windDirectionCompass")));

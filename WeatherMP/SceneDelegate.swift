@@ -14,16 +14,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        let locator = ServiceLocator()
-        let cityService = CityService() as CityService
-        locator.registerService(service: cityService)
-        
-//        let cityViewModel = CityViewModel(cityService: locator.getService())
-        
+
         let cityViewModel = CityViewModel()
         
+        let weatherViewModel = WeatherViewModel()
         let contentView = ContentView().environmentObject(cityViewModel)
+            .environmentObject(weatherViewModel)
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

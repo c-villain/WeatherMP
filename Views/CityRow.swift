@@ -11,8 +11,6 @@ import app
 
 struct CityRow: View {
     
-    @EnvironmentObject var viewModel: CityViewModel
-    
     let city: City
     
     var body: some View {

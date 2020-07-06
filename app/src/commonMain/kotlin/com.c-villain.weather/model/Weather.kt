@@ -25,7 +25,7 @@ import kotlinx.serialization.SerialName
  */
 @Serializable data class Weather (
     @SerialName("id")
-    val id: kotlin.Int? = null,
+    val id: kotlin.Long? = null,
     @SerialName("weather_state_name")
     val weatherStateName: kotlin.String? = null,
     @SerialName("applicable_date")

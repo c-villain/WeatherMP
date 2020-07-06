@@ -21,36 +21,39 @@ final class CityViewModel : ObservableObject
     
     func loadCities(cityName: String)  {
         
-        weatherServiceApi.loadData(query: cityName)
+        weatherServiceApi.loadCities(query: cityName)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-                let results = self.weatherServiceApi.data
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            DispatchQueue.main.async{
+                let results = self.weatherServiceApi.cities
                 self.cities.append(contentsOf: results)
             }
+        }
+/*
+        DispatchQueue.main.async {
+                let results = self.weatherServiceApi.loadData(query: cityName)
+                self.cities.append(contentsOf: results)
+            }
+            
+        
+        
+            self.weatherServiceApi.loadData(query: cityName)
+        DispatchQueue.main.async {
+            let results = self.weatherServiceApi.data
+            self.cities.append(contentsOf: results)
+        }
 
-//        DispatchQueue.main.async {
-//                let results = self.weatherServiceApi.loadData(query: cityName)
-//                self.cities.append(contentsOf: results)
-//            }
-//            
-        
-        
-//            self.weatherServiceApi.loadData(query: cityName)
-//        DispatchQueue.main.async {
-//            let results = self.weatherServiceApi.data
-//            self.cities.append(contentsOf: results)
-//        }
-//
-//        weatherServiceApi.loadCities(query: cityName){result in
-//            DispatchQueue.main.async {
-//                switch result{
-//                case .success(let cities):
-//                    self.cities.append(contentsOf: cities)
-//
-//                case .failure(let error):
-//                    print("Failed loading cities: " + error.localizedDescription)
-//                }
-//            }
-//        }
+        weatherServiceApi.loadCities(query: cityName){result in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let cities):
+                    self.cities.append(contentsOf: cities)
+
+                case .failure(let error):
+                    print("Failed loading cities: " + error.localizedDescription)
+                }
+            }
+        }
+ */
     }
 }
