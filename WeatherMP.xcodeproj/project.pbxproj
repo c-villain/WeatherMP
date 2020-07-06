@@ -97,6 +97,7 @@
 		5AABE71524B0810500E077FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5AD223EC24AE70120086E4E1 /* ContentView.swift */,
 				5AABE71624B0812800E077FE /* CityRow.swift */,
 				5ADA0DB024B34D2A00FEAEE7 /* WeatherRow.swift */,
 				5ADA0DB224B34E3000FEAEE7 /* CityWeatherListView.swift */,
@@ -124,10 +125,6 @@
 		5AD223DC24AE70120086E4E1 = {
 			isa = PBXGroup;
 			children = (
-				5AD9835B24B1DB8D008AE4D6 /* Controls */,
-				5AABE71B24B083E800E077FE /* Model */,
-				5AABE71824B0813B00E077FE /* ViewModels */,
-				5AABE71524B0810500E077FE /* Views */,
 				5A437BE824AE7E3500852526 /* app */,
 				5AD223E724AE70120086E4E1 /* WeatherMP */,
 				5AD223E624AE70120086E4E1 /* Products */,
@@ -147,13 +144,12 @@
 		5AD223E724AE70120086E4E1 /* WeatherMP */ = {
 			isa = PBXGroup;
 			children = (
-				5AD223E824AE70120086E4E1 /* AppDelegate.swift */,
+				5AABE71524B0810500E077FE /* Views */,
+				5AABE71824B0813B00E077FE /* ViewModels */,
+				5AABE71B24B083E800E077FE /* Model */,
+				5AD9835B24B1DB8D008AE4D6 /* Controls */,
 				5AD223EA24AE70120086E4E1 /* SceneDelegate.swift */,
-				5AD223EC24AE70120086E4E1 /* ContentView.swift */,
-				5AD223EE24AE70130086E4E1 /* Assets.xcassets */,
-				5AD223F324AE70130086E4E1 /* LaunchScreen.storyboard */,
-				5AD223F624AE70130086E4E1 /* Info.plist */,
-				5AD223F024AE70130086E4E1 /* Preview Content */,
+				5ADA0DB624B35FA700FEAEE7 /* SupportingFiles */,
 			);
 			path = WeatherMP;
 			sourceTree = "<group>";
@@ -172,6 +168,18 @@
 				5AD9835C24B1DBA0008AE4D6 /* SearhBar.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		5ADA0DB624B35FA700FEAEE7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5AD223F024AE70130086E4E1 /* Preview Content */,
+				5AD223E824AE70120086E4E1 /* AppDelegate.swift */,
+				5AD223EE24AE70130086E4E1 /* Assets.xcassets */,
+				5AD223F324AE70130086E4E1 /* LaunchScreen.storyboard */,
+				5AD223F624AE70130086E4E1 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,14 +476,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WeatherMP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WeatherMP/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = TP33793R45;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/app/build/bin/ios/debugFramework",
 				);
-				INFOPLIST_FILE = WeatherMP/Info.plist;
+				INFOPLIST_FILE = WeatherMP/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,14 +500,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WeatherMP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WeatherMP/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = TP33793R45;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/app/build/bin/ios/debugFramework",
 				);
-				INFOPLIST_FILE = WeatherMP/Info.plist;
+				INFOPLIST_FILE = WeatherMP/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
