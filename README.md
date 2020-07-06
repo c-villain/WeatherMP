@@ -17,7 +17,7 @@ Coding multiplatform network layer using [KMM](https://www.jetbrains.com/lp/mobi
   
 1. **PROBLEM**: [OpenApi-Generator](https://github.com/OpenAPITools/openapi-generator) currently (as a publication day) not generates multiplatform kotlin code correctly: lots of calls are deprecated, you may see it [here](https://github.com/c-villain/WeatherMP/tree/master/%5BNotWorking%5DNetworkLayer).
     >openapi-generator generate -g kotlin -i [file].yaml --library multiplatform -o NetworkLayer 
-2. Using [moko-network **sample**](https://github.com/icerockdev/moko-network) am generates **part** of necessary code:
+2. Using [moko-network **sample**](https://github.com/icerockdev/moko-network) am generate **part** of necessary code:
     * >CityApi.kt
     * >City.kt
     * >Weather.kt
