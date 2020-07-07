@@ -5,6 +5,11 @@ Demo weather app with multiplatform network core.
 
 Coding multiplatform network layer using [KMM](https://www.jetbrains.com/lp/mobilecrossplatform/) and code-generation.
 
+## Usage 
+For correct building change path to your andoid sdk dir in file [local.properties](https://github.com/c-villain/WeatherMP/blob/master/local.properties).
+
+Чтобы сбилдить проект, пропишите путь к android sdk в файле [local.properties](https://github.com/c-villain/WeatherMP/blob/master/local.properties).
+
 ## Used: 
 * [Public weather api](https://www.metaweather.com/api)
 * [Gradle 6.1.1](https://gradle.org/releases/)
